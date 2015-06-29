@@ -48,7 +48,7 @@ public class Mana : MonoBehaviour
 		
 		if(_refreshMana)
 		{
-			StartCoroutine(RechargeMana());
+			RechargeMana();
 		}
 	}
 	
@@ -78,16 +78,9 @@ public class Mana : MonoBehaviour
 		}
 	}
 	
-	public IEnumerator RechargeMana()
+	public void RechargeMana()
 	{	
-		while(_currentMana != _maxMana && _refreshMana)	
-		{
-			yield return new WaitForSeconds(1);
-			_currentMana += 5.0f;
-		}
-		
-		yield return 0;
-		_refreshMana = false;
+		_currentMana += (10*Time.deltaTime);
 	}
 	
 	private void ClampMana()	
