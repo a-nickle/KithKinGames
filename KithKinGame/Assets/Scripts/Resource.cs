@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Resource : MonoBehaviour 
+public abstract class Resource : MonoBehaviour 
 {
-	protected int _source;
+	protected float _source;
 	
-	public bool canUseAbility;
+	protected float _currentSource;
 	
-	// Use this for initialization
-	void Start () 
+	protected bool _canUseAbility;
+	
+	public bool CanUseAbility
 	{
-	
+		get
+		{
+			return _canUseAbility;
+		}
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
+	public abstract bool UseResource(float amount);
 }
