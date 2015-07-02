@@ -1,40 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mana : MonoBehaviour 
+public class Mana : Resource
 {		
-	[SerializeField]
-	private float _maxMana;
-	[SerializeField]
-	private float _currentMana;
-	
-	private bool _canUseMana;
-	
 	private float _refreshTimer;
 	
 	private bool _refreshMana;
 	
-	public bool CanUseMana
-	{
-		get
-		{
-			return _canUseMana;
-		}
-	}
 	
-	public float CurrentMana
-	{
-		get
-		{
-			return _currentMana;
-		}
-	}
-	
-	// Use this for initialization
 	void Start () 
 	{
-		_currentMana = _maxMana;
-		_canUseMana = true;
+		_currentSource = _maxSource;
 		_refreshMana = false;
 		_refreshTimer = 5.0f;		
 	}
@@ -42,28 +18,19 @@ public class Mana : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		ClampMana();
 		CoolDownToRefresh();
-		Debug.Log(_currentMana);
+		
+		ClampMana();
 		
 		if(_refreshMana)
 		{
 			RechargeMana();
 		}
-	}
-	
-	public void UseMana(int amount)
-	{
-		if(_currentMana < amount)
+		
+		if(Input.GetKey(KeyCode.LeftControl))
 		{
-			_canUseMana = false;
-			Debug.Log("Insufficient Mana");
-			return;		
+			ForceRecharge();
 		}
-		_refreshTimer = 5.0f;
-		_refreshMana = false;
-		_canUseMana = true;
-		_currentMana -= amount;
 	}
 	
 	public void CoolDownToRefresh()
@@ -78,21 +45,49 @@ public class Mana : MonoBehaviour
 		}
 	}
 	
-	public void RechargeMana()
-	{	
-		_currentMana += (10*Time.deltaTime);
-	}
-	
-	private void ClampMana()	
+	public override bool UseResource(float amount)
 	{
-		if(_currentMana >= _maxMana)
+		if(amount > _currentSource)
 		{
-			_currentMana = _maxMana;
+			_canUseAbility = false;
+		}
+		else
+		{
+			_currentSource -= amount;
+			_canUseAbility = true;
+			_refreshMana = false;
+			_refreshTimer = 5.0f;
 		}
 		
-		else if(_currentMana <= 0)
+		return _canUseAbility;
+	}
+	
+	public void RechargeMana()
+	{	
+		_currentSource += (10*Time.deltaTime);
+	}
+	
+	private void ForceRecharge()
+	{	
+		_currentSource += (20*Time.deltaTime);
+		
+		if(_refreshMana != false)
 		{
-			_currentMana = 0;
+			_refreshMana = false;
+			_refreshTimer = 5.0f;
+		}
+	}
+	
+	private void ClampMana()
+	{
+		if(_currentSource >= _maxSource)
+		{
+			_refreshMana = false;
+			_currentSource = _maxSource;
+		}
+		else if(_currentSource < 0.0f)
+		{
+			_currentSource = 0.0f;
 		}
 	}
 }

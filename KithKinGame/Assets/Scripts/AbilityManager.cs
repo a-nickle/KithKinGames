@@ -8,7 +8,7 @@ public class AbilityManager : MonoBehaviour
 	private int _abilityID;
 	private ParticleSystem _particles;// Temporary for visuals
 	
-	private Mana _playerMana;
+	private Resource _playerAbilityResource;
 	
 	private int _manaToUse;
 	
@@ -31,7 +31,7 @@ public class AbilityManager : MonoBehaviour
 		_particles.startColor = Color.blue;
 		_playerMat.color = Color.blue;
 		
-		_playerMana = gameObject.GetComponent<Mana>();
+		_playerAbilityResource = gameObject.GetComponent<Resource>();
 	}
 	
 	// Update is called once per frame
@@ -81,13 +81,15 @@ public class AbilityManager : MonoBehaviour
 	}
 	
 	public void ActivateAbility()
-	{					
-		_playerMana.UseMana(_manaToUse);
-		
-		if(_playerMana.CanUseMana)
+	{			
+		if(_playerAbilityResource.UseResource(_manaToUse))
 		{
 			Debug.Log ("Activate Ability: " + AbilityID );
 			_particles.Emit(50);
-		}		
+		}
+		else
+		{		
+			Debug.Log("InsufficientMana");
+		}
 	}
 }

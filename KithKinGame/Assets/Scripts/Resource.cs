@@ -3,8 +3,9 @@ using System.Collections;
 
 public abstract class Resource : MonoBehaviour 
 {
-	protected float _source;
-	
+	[SerializeField]
+	protected float _maxSource;
+	[SerializeField]
 	protected float _currentSource;
 	
 	protected bool _canUseAbility;

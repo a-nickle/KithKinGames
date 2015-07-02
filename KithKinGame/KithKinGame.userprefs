@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Resource.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\Andrew\Desktop\KithKinGames\KithKinGame\Assets\Scripts\AbilityManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Resource.cs" Line="3" Column="1" />
-      <File FileName="Assets\Scripts\Mana.cs" Line="85" Column="2" />
+      <File FileName="Assets\Scripts\Resource.cs" Line="19" Column="3" />
+      <File FileName="Assets\Scripts\Mana.cs" Line="73" Column="3" />
+      <File FileName="c:\Users\Andrew\Desktop\KithKinGames\KithKinGame\Assets\Scripts\AbilityManager.cs" Line="72" Column="4" />
+      <File FileName="Assets\Scripts\Health.cs" Line="45" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
