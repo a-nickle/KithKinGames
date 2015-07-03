@@ -85,7 +85,15 @@ public class Darkness : Resource
 	
 	public void RechargeDarkness()
 	{	
-		_currentSource -= (10*Time.deltaTime);
+		if(_currentSource > 0.0f)
+		{
+			_currentSource -= (10*Time.deltaTime);
+		}
+		else if( _currentSource < 0.0f)
+		{
+			_refreshTimer = 5.0f;
+			_refreshDarkness = false;
+		}
 	}
 	
 	private void ForceRecharge()
