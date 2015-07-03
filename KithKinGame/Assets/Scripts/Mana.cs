@@ -71,7 +71,7 @@ public class Mana : Resource
 	{	
 		_currentSource += (20*Time.deltaTime);
 		
-		if(_refreshMana != false)
+		if(_refreshTimer != 5.0f)
 		{
 			_refreshMana = false;
 			_refreshTimer = 5.0f;
