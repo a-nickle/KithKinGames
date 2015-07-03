@@ -102,7 +102,7 @@ public class Darkness : Resource
 			_playerMovement.enabled = false;
 			_abilityManager.enabled = false;
 		}
-		else
+		else if(_currentSource <= 0.0f)
 		{
 			_playerMovement.enabled = true;
 			_abilityManager.enabled = true;	

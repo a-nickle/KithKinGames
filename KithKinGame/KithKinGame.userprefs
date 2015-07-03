@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Health.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Darkness.cs">
     <Files>
-      <File FileName="Assets\Scripts\Mana.cs" Line="92" Column="3" />
-      <File FileName="Assets\Scripts\Resource.cs" Line="19" Column="3" />
-      <File FileName="c:\Users\Andrew\Desktop\KithKinGames\KithKinGame\Assets\Scripts\AbilityManager.cs" Line="72" Column="4" />
-      <File FileName="Assets\Scripts\Health.cs" Line="45" Column="56" />
-      <File FileName="Assets\Scripts\Darkness.cs" Line="109" Column="29" />
+      <File FileName="Assets\Scripts\Darkness.cs" Line="105" Column="34" />
+      <File FileName="Assets\Scripts\Mana.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Resource.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\Andrew\Desktop\KithKinGames\KithKinGame\Assets\Scripts\AbilityManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Health.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
