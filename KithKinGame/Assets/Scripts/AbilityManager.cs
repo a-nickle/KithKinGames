@@ -6,7 +6,20 @@ public class AbilityManager : MonoBehaviour
 	[SerializeField]
 	private Material _playerMat;// Temporary for visuals
 	private int _abilityID;
+	private int _setID;
 	private ParticleSystem _particles;// Temporary for visuals
+	
+	[SerializeField]
+	private AbilityBase[] AbilitySet1 = new AbilityBase[4];
+	[SerializeField]
+	private AbilityBase[] AbilitySet2 = new AbilityBase[4];
+	[SerializeField]
+	private AbilityBase[] AbilitySet3 = new AbilityBase[4];
+	[SerializeField]
+	private AbilityBase[] AbilitySet4 = new AbilityBase[4];
+	
+	private AbilityBase[] ActiveSet = new AbilityBase[4];
+	
 	
 	private Resource _playerAbilityResource;
 	
