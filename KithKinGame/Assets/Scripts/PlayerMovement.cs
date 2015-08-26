@@ -13,16 +13,16 @@ public class PlayerMovement : MonoBehaviour
 	/// </summary>
 	private void MovePlayer()
 	{
-		float move;
-		float rotation;
+		float fwdmove;
+		float sdemove;
 		
-		move =  Input.GetAxis("Vertical") * Constants.PLAYER_MOVE_SPEED * Time.deltaTime;
+		fwdmove =  Input.GetAxis("Vertical") * Constants.PLAYER_MOVE_SPEED * Time.deltaTime;
 		
-		rotation = Input.GetAxis("Horizontal") * Constants.PLAYER_ROTATION_SPEED * Time.deltaTime;
+		sdemove = Input.GetAxis("Horizontal") * (-Constants.PLAYER_MOVE_SPEED) * Time.deltaTime;
 		
 		// Move forward and rotate based on input.
-		transform.Translate(Vector3.forward * move);
-		transform.Rotate(Vector3.up * rotation);
+		transform.Translate(Vector3.forward * fwdmove);
+		transform.Translate(Vector3.left * sdemove);
 	}
 	
 }
